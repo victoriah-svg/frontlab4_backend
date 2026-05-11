@@ -6,7 +6,7 @@ html {
     height: 100vh;
 }
 
-body{
+body {
     max-width: 1200px;
     margin: 0 auto;
     min-height: 100vh;
@@ -18,17 +18,19 @@ body{
     font-family: "Roboto", Arial, Helvetica, sans-serif;
 }
 
-#logo a, h1, h2 {
+#logo a,
+h1,
+h2 {
     font-family: "Fjalla One", Impact, Arial, sans-serif, sans-serif;
 }
 
-#logo a{
+#logo a {
     text-decoration: none;
     color: #e4f7f9;
     text-shadow: 0px 4px 10px rgba(40, 37, 37, 0.3);
 }
 
-#logo:hover{
+#logo:hover {
     opacity: 0.9;
 }
 
@@ -38,20 +40,21 @@ ul {
     gap: 1rem;
 }
 
-ul a{
+ul a {
     text-decoration: none;
     color: #F5F1E8;
     font-size: 1.3rem;
 }
 
-.active{
+.active {
     background-color: #F5F1E8;
     padding: 5px;
     border-radius: 5px;
     color: black;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-ul a:hover{
+ul a:hover {
     text-decoration: underline;
 }
 
@@ -59,11 +62,34 @@ p {
     max-width: 65ch;
 }
 
-header{
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     background-color: #96420a;
     padding: 1rem;
-    
+
+}
+
+/*Logga-in-sida*/
+input {
+    width: 50%;
+    height: 30px;
+    border-radius: 5px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+#submitBtn {
+    margin-top: 40px;
+    width: 150px;
+    background-color: #265e65;
+    font-size: 1.2rem;
+    color: #F5F1E8;
+    height: 50px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+#submitBtn:hover {
+    opacity: 0.9;
 }
