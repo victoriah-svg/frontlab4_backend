@@ -30,7 +30,7 @@ async function getCV(cvDiv) {
 
 function changeNav(nav) {
 
-    localStorage.setItem("cv_token", "test");
+    // localStorage.setItem("cv_token", "test");
 
     if (localStorage.getItem("cv_token")) {
         nav.innerHTML = `
@@ -38,5 +38,23 @@ function changeNav(nav) {
         <li><a href="/cv">Mitt CV</a></li>
         <li><button id="logout">Logga ut</button></li>
         `;
-    } // ska jag lägga till else med vanlig meny här? 
+    } else {
+        nav.innerHTML = `
+        <li><a href="/">Hem</a></li>
+        <li><a href="/cv">Mitt CV</a></li>
+        <li><a href="/login">Login</a></li>
+        `
+    }
+
+    //Logga ut knapp
+    const logoutBtn = document.getElementById("logout");
+
+    //om logga-ut-knapp finns - lyssna på klick och ta bort token ur localStorage samt dirigera om till loginsidan
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", () => {
+            console.log("Logga ut");
+            localStorage.removeItem("cv_token");
+            window.location.href = "login.html";
+        });
+    }
 }
