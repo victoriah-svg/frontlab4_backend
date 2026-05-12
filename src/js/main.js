@@ -31,7 +31,7 @@ async function getCV(cvDiv) {
     const token = localStorage.getItem("cv_token");
 
     try {
-        const response = await fetch('http://localhost:3000/work', {
+        const response = await fetch('http://localhost:3001/work', {
             method: "GET",
             headers: {
                 "authorization": "Bearer " + token,
@@ -91,10 +91,14 @@ async function loginUser(e) {
 
     let usernameInput = document.getElementById("username").value;
     let passwordInput = document.getElementById("password").value;
+    //errordiv
+    let errorDiv = document.getElementById("errorDivLogin");
+    errorDiv.innerHTML= "";
 
     //Kontroll att data är lagrad i fälten 
     if (!usernameInput || !passwordInput) {
         console.log("Fyll i alla fält"); //skriv ut felmeddelande
+        errorDiv.innerHTML="Fyll i alla fält";
         return
     }
 
@@ -128,6 +132,7 @@ async function loginUser(e) {
 
     } catch (error) {
         console.log("Felaktigt användarnamn eller lösenord"); //Skriv ut till DOM istället
+        errorDiv.innerHTML="Felaktigt användarnamn eller lösenord";
     }
 }
 

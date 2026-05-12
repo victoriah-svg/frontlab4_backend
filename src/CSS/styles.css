@@ -94,6 +94,10 @@ input {
     opacity: 0.9;
 }
 
+#errorDivLogin{
+    color: red;
+}
+
 /*Registreringssida*/
 
 #created {
