@@ -93,3 +93,15 @@ input {
 #submitBtn:hover {
     opacity: 0.9;
 }
+
+/*Registreringssida*/
+
+#created {
+   
+    color: green;
+   
+}
+
+#notCreated{
+    color: red;
+}

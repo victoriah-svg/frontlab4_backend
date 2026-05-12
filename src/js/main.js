@@ -132,11 +132,16 @@ async function loginUser(e) {
 }
 
 async function registerUser(e){
+
 e.preventDefault();
 //lagrar inputvalues 
 let usernameInputReg = document.getElementById("usernameReg").value;
 let passwordInputReg = document.getElementById("passwordReg").value;
 let createdDiv = document.getElementById("created");
+let failedToCreate = document.getElementById("notCreated");
+
+createdDiv.innerHTML = "";
+failedToCreate.innerHTML = "";
 
  //Kontroll att data är lagrad i fälten 
     if (!usernameInputReg || !passwordInputReg) {
@@ -173,6 +178,7 @@ let createdDiv = document.getElementById("created");
         }
 
     } catch (error) {
+        failedToCreate.innerHTML="Det gick inte att registrera - prova igen";
         console.log("Det gick inte att registrera"); //Skriv ut till DOM istället
     }
 }
