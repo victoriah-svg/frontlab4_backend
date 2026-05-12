@@ -62,13 +62,13 @@ function changeNav(nav) {
     if (localStorage.getItem("cv_token")) {
         nav.innerHTML = `
         <li><a href="/">Hem</a></li>
-        <li><a href="/cv">Mitt CV</a></li>
+        <li><a href="/cv">CV</a></li>
         <li><button id="logout">Logga ut</button></li>
         `;
     } else {
         nav.innerHTML = `
         <li><a href="/">Hem</a></li>
-        <li><a href="/cv">Mitt CV</a></li>
+        <li><a href="/cv">CV</a></li>
         <li><a href="/login">Login</a></li>
         `
     }
