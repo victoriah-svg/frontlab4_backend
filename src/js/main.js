@@ -1,35 +1,51 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
     //formulär
-    const form = document.getElementById("loginForm");
+    const loginForm = document.getElementById("loginForm");
     //cvDiv
     let cvDiv = document.getElementById("cvDiv");
     //Ul-lista meny
     const nav = document.getElementById("menu");
 
-     changeNav(nav);
+    changeNav(nav);
 
     if (cvDiv) {
-        getCV(cvDiv);
-    }
+    getCV(cvDiv);
+     }
 
-    if(loginForm){
+    if (loginForm) {
         loginForm.addEventListener("submit", loginUser);
     }
-   
+
 });
 
+//Körs om anävndaren är inloggad
 async function getCV(cvDiv) {
-    //måste lägga till att hämta och skicka med token
+    //hämta in token 
+    const token = localStorage.getItem("cv_token");
+    
     try {
-        const response = await fetch('http://localhost:3000/work');
-        const result = await response.json();
-        result.forEach(job => {
-            cvDiv.innerHTML += `<p>${job.companyname}</p>`;
+        const response = await fetch('http://localhost:3000/work', {
+            method: "GET",
+            headers: {
+                "authorization": "Bearer " + token,
+                "content-type": "application/json"
+                
+            }
         });
+       // if (response.ok) {
+            const result = await response.json();
+            console.log(result);
+            result.forEach(job => {
+                cvDiv.innerHTML += `<p>${job.companyname} - ${job.jobtitle} - ${job.location}</p>`;
+            });
+      /*  } else {
+            throw error
+        }*/
+
 
     } catch (error) {
-        console.log(error);
+        console.log("Något gick fel " + error);
     }
 }
 
@@ -71,9 +87,9 @@ async function loginUser(e) {
     let passwordInput = document.getElementById("password").value;
 
     //Kontroll att data är lagrad i fälten 
-    if(!usernameInput || !passwordInput){
+    if (!usernameInput || !passwordInput) {
         console.log("Fyll i alla fält"); //skriv ut felmeddelande
-        return 
+        return
     }
 
     //Skapa objekt för användare 
@@ -82,7 +98,7 @@ async function loginUser(e) {
         password: passwordInput
     }
 
-    try{
+    try {
         const response = await fetch("http://localhost:3000/authAPI/login",
             {
                 method: "POST",
@@ -93,18 +109,18 @@ async function loginUser(e) {
             }
         );
 
-        if(response.ok){
+        if (response.ok) {
             const data = await response.json();
-            console.log(data);
+           // console.log(data.response.token);
             //lagrar token som skickats med från anropet i localStorage
-            localStorage.setItem("cv_token", data.token);
+            localStorage.setItem("cv_token", data.response.token);
             //Dirigerar om till cv-sidan
             window.location.href = "cv.html";
-        }else{
+        } else {
             throw error;
         }
 
-    }catch(error){
+    } catch (error) {
         console.log("Felaktigt användarnamn eller lösenord"); //Skriv ut till DOM istället
     }
 }
