@@ -2,38 +2,38 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/src/CSS/styles.css">
-  <title>frontlab4_backend</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/CSS/styles.css">
+    <title>frontlab4_backend</title>
 </head>
 
 <body>
-  <header>
-    <h1 id="logo"><a href="/">Min CV-sida</a></h1>
-    <nav>
-      <ul>
-        <li><a href="/">Hem</a></li>
-       <li><a href="/cv">Mitt CV</a></li>
-       <li><a href="/login" class="active">Login</a></li>
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>Logga in</h1>
-    <p>Har du inget konto än? <a href="/register">Registrera dig här</a></p>
-    <form id="form">
-        <label for="username">Användarnamn: </label>
-        <input type="text" id="username">
-        <label for="password">Lösenord: </label>
-        <input type="text" id="password">
-        <input type="submit" id="submitBtn" value="Logga in">
-    </form>
-    
-  </main>
+    <header>
+        <h1 id="logo"><a href="/">Min CV-sida</a></h1>
+        <nav>
+            <ul id="menu">
+                <li><a href="/">Hem</a></li>
+                <li><a href="/cv">Mitt CV</a></li>
+                <li><a href="/login" class="active">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Logga in</h1>
+        <p>Har du inget konto än? <a href="/register">Registrera dig här</a></p>
+        <form id="form">
+            <label for="username">Användarnamn: </label>
+            <input type="text" id="username">
+            <label for="password">Lösenord: </label>
+            <input type="text" id="password">
+            <input type="submit" id="submitBtn" value="Logga in">
+        </form>
 
-  <script type="module" src="/src/js/main.js"></script>
+    </main>
+
+    <script type="module" src="/src/js/main.js"></script>
 </body>
 
 </html>
