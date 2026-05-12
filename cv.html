@@ -2,32 +2,36 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/src/CSS/styles.css">
-  <title>frontlab4_backend</title>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/CSS/styles.css">
+    <title>frontlab4_backend</title>
 </head>
 
 <body>
-  <header>
-    <h1 id="logo"><a href="/">Victorias CV</a></h1>
-    <nav>
-      <ul id="menu">
-        <li><a href="/">Hem</a></li>
-       <li><a href="/cv">CV</a></li>
-       <li><a href="/login">Login</a></li>
-       
-      </ul>
-    </nav>
-  </header>
-  <main>
-    <h1>CV</h1>
-    <div id="cvDiv"></div>
-  </main>
+    <header id="headerNav" class="topnav">
+        <h1 id="logo"><a href="/">Victorias CV</a></h1>
+        <nav>
+            <ul id="menu" class="nav-links">
+                <li><a href="/">Hem</a></li>
+                <li><a href="/cv">CV</a></li>
+                <li><a href="/login">Login</a></li>
+            </ul>
+            <!--hamburgerikon-->
+            <div id="hamburger">
+                <img src="/Images/menuebar.svg" alt="meny">
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>CV</h1>
+        <div id="cvDiv"></div>
+    </main>
 
-  <script type="module" src="/src/js/main.js"></script>
-   <script type="module" src="/src/js/checkAuth.js"></script>
+    <script type="module" src="/src/js/main.js"></script>
+    <script type="module" src="/src/js/checkAuth.js"></script>
+    <script type="module" src="/src/js/hamburger.js"></script>
 </body>
 
 </html>

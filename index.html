@@ -10,14 +10,18 @@
 </head>
 
 <body>
-  <header>
+  <header id="headerNav" class="topnav">
     <h1 id="logo"><a href="/">Victorias CV</a></h1>
     <nav>
-      <ul id="menu">
+      <ul id="menu" class="nav-links">
         <li><a href="/">Hem</a></li>
         <li><a href="/cv">CV</a></li>
         <li><a href="/login">Login</a></li>
       </ul>
+      <!--hamburgerikon-->
+      <div id="hamburger">
+        <img src="/Images/menuebar.svg" alt="meny">
+      </div>
     </nav>
   </header>
   <main id="mainStart">
@@ -30,6 +34,7 @@
   </main>
 
   <script type="module" src="/src/js/main.js"></script>
+  <script type="module" src="/src/js/hamburger.js"></script>
 </body>
 
 </html>
