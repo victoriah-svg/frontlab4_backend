@@ -31,7 +31,7 @@ async function getCV(cvDiv) {
     const token = localStorage.getItem("cv_token");
 
     try {
-        const response = await fetch('http://localhost:3001/work', {
+        const response = await fetch('https://lab4-backend-6ioa.onrender.com/work', {
             method: "GET",
             headers: {
                 "authorization": "Bearer " + token,
@@ -109,7 +109,7 @@ async function loginUser(e) {
     }
 
     try {
-        const response = await fetch("http://localhost:3001/authAPI/login",
+        const response = await fetch("https://lab4-backend-6ioa.onrender.com/authAPI/login",
             {
                 method: "POST",
                 headers: {
@@ -162,7 +162,7 @@ failedToCreate.innerHTML = "";
 
 
      try {
-        const response = await fetch("http://localhost:3001/authAPI/register",
+        const response = await fetch("https://lab4-backend-6ioa.onrender.com/authAPI/register",
             {
                 method: "POST",
                 headers: {
