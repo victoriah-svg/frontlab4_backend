@@ -115,6 +115,21 @@ input {
     color: red;
 }
 
+#divLogin {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+}
+
+#loginForm {
+    width: 90%;
+    display: grid;
+    justify-items: center;
+}
+
+
 /*Registreringssida*/
 
 #created {
@@ -125,6 +140,21 @@ input {
 
 #notCreated {
     color: red;
+}
+
+#divRegister {
+    display: grid;
+    justify-items: center;
+    width: 90%;
+    padding: 20px;
+    text-align: center;
+}
+
+#registerForm {
+    width: 90%;
+    display: grid;
+    justify-items: center;
+
 }
 
 /*Startsida*/
@@ -161,6 +191,24 @@ input {
 
 #homeDiv a {
     color: black;
+}
+
+#h1cv {
+    padding-left: 20px;
+}
+
+#cvDiv {
+    padding-left: 20px;
+}
+
+/*CV-sida*/
+#mainCV{
+    display: grid;
+    justify-items: center;
+}
+
+#mainCV h1{
+    align-self: end;
 }
 
 /*--Mobil-läge--*/
@@ -210,36 +258,25 @@ input {
         width: 90%;
     }
 
+    /*Startsida*/
+    #mainStart {
+        width: 100%;
+    }
 
-
-    /*Loginsida*/
-    #divLogin {
-        display: grid;
-        justify-items: center;
+    #homeDiv {
         width: 90%;
-        padding: 20px;
+        padding: 5px;
+    }
+
+    #homeDiv h1 {
+        font-size: 1.4rem;
         text-align: center;
     }
 
-    #loginForm {
-        width: 90%;
-        display: grid;
-        justify-items: center;
-    }
 
-    /*Registreringssidan*/
-    #divRegister {
-        display: grid;
-        justify-items: center;
-        width: 90%;
-        padding: 20px;
-        text-align: center;
-    }
+    /*Cv-sida*/
 
-    #registerForm {
-        width: 90%;
-        display: grid;
-        justify-items: center;
-
+    #cvDiv p {
+        font-size: 1rem;
     }
 }
