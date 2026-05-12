@@ -26,5 +26,5 @@ npm install
 npm run dev
 
 #### 🌟Länk till publicerad webbplats
-
+https://frontlab4-backend.netlify.app/register
 
