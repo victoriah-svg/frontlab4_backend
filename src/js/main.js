@@ -1,7 +1,9 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", () => {
-    //formulär
+    //formulär för login
     const loginForm = document.getElementById("loginForm");
+    //formulär för registrering
+    const registerForm = document.getElementById("registerForm");
     //cvDiv
     let cvDiv = document.getElementById("cvDiv");
     //Ul-lista meny
@@ -10,11 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
     changeNav(nav);
 
     if (cvDiv) {
-    getCV(cvDiv);
-     }
+        getCV(cvDiv);
+    }
 
     if (loginForm) {
         loginForm.addEventListener("submit", loginUser);
+    }
+
+    if (registerForm) {
+       registerForm.addEventListener("submit", registerUser);
     }
 
 });
@@ -23,25 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
 async function getCV(cvDiv) {
     //hämta in token 
     const token = localStorage.getItem("cv_token");
-    
+
     try {
         const response = await fetch('http://localhost:3000/work', {
             method: "GET",
             headers: {
                 "authorization": "Bearer " + token,
                 "content-type": "application/json"
-                
+
             }
         });
-       // if (response.ok) {
-            const result = await response.json();
-            console.log(result);
-            result.forEach(job => {
-                cvDiv.innerHTML += `<p>${job.companyname} - ${job.jobtitle} - ${job.location}</p>`;
-            });
-      /*  } else {
-            throw error
-        }*/
+        // if (response.ok) {
+        const result = await response.json();
+        console.log(result);
+        result.forEach(job => {
+            cvDiv.innerHTML += `<p>${job.companyname} - ${job.jobtitle} - ${job.location}</p>`;
+        });
+        /*  } else {
+              throw error
+          }*/
 
 
     } catch (error) {
@@ -99,7 +105,7 @@ async function loginUser(e) {
     }
 
     try {
-        const response = await fetch("http://localhost:3000/authAPI/login",
+        const response = await fetch("http://localhost:3001/authAPI/login",
             {
                 method: "POST",
                 headers: {
@@ -111,7 +117,7 @@ async function loginUser(e) {
 
         if (response.ok) {
             const data = await response.json();
-           // console.log(data.response.token);
+            // console.log(data.response.token);
             //lagrar token som skickats med från anropet i localStorage
             localStorage.setItem("cv_token", data.response.token);
             //Dirigerar om till cv-sidan
@@ -122,5 +128,51 @@ async function loginUser(e) {
 
     } catch (error) {
         console.log("Felaktigt användarnamn eller lösenord"); //Skriv ut till DOM istället
+    }
+}
+
+async function registerUser(e){
+e.preventDefault();
+//lagrar inputvalues 
+let usernameInputReg = document.getElementById("usernameReg").value;
+let passwordInputReg = document.getElementById("passwordReg").value;
+let createdDiv = document.getElementById("created");
+
+ //Kontroll att data är lagrad i fälten 
+    if (!usernameInputReg || !passwordInputReg) {
+        console.log("Fyll i alla fält"); //skriv ut felmeddelande
+        return
+    }
+    
+     //Skapa objekt för användare 
+    let user = {
+        username: usernameInputReg,
+        password: passwordInputReg
+    }
+
+
+     try {
+        const response = await fetch("http://localhost:3001/authAPI/register",
+            {
+                method: "POST",
+                headers: {
+                    "content-type": "application/json"
+                },
+                body: JSON.stringify(user)
+            }
+        );
+
+        if (response.ok) {
+            const data = await response.json();
+           console.log( data.message);
+           createdDiv.innerHTML = data.message;
+            //Dirigerar om till cv-sidan
+            //window.location.href = "cv.html";
+        } else {
+            throw error;
+        }
+
+    } catch (error) {
+        console.log("Det gick inte att registrera"); //Skriv ut till DOM istället
     }
 }
