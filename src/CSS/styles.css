@@ -83,6 +83,11 @@ header {
 
 }
 
+/*Hamburgermeny*/
+#hamburger {
+    display: none;
+}
+
 /*Logga-in-sida*/
 input {
     width: 50%;
@@ -156,4 +161,48 @@ input {
 
 #homeDiv a {
     color: black;
+}
+
+/*--Mobil-läge--*/
+@media screen and (max-width: 600px) {
+    #logo {
+        font-size: 1.8rem;
+    }
+
+     /*--Hamburgermeny--*/
+    #hamburger {
+        display: block;
+        order: 1;
+    }
+
+    #hamburger img {
+        width: 100%;
+        max-width: 40px;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .topnav.responsive .nav-links {
+        display: flex;
+    }
+
+    .topnav.responsive {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .topnav.responsive nav {
+        order: 2;
+    }
+
+    ul a {
+        background-color: #96420a;
+        box-shadow: none;
+        color: #F5F1E8;
+        font-weight: bold;
+    }
 }
