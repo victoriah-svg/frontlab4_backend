@@ -24,18 +24,19 @@
             </div>
         </nav>
     </header>
-    <main>
-        <h1>Logga in</h1>
-        <p>Har du inget konto än? <a href="/register">Registrera dig här</a></p>
-        <div id="errorDivLogin"></div>
-        <form id="loginForm">
-            <label for="username">Användarnamn: </label>
-            <input type="text" id="username">
-            <label for="password">Lösenord: </label>
-            <input type="password" id="password">
-            <input type="submit" id="submitBtn" value="Logga in">
-        </form>
-
+    <main id="mainLogin">
+        <div id="divLogin">
+            <h1>Logga in</h1>
+            <p>Har du inget konto än? <a href="/register">Registrera dig här</a></p>
+            <div id="errorDivLogin"></div>
+            <form id="loginForm">
+                <label for="username">Användarnamn: </label>
+                <input type="text" id="username">
+                <label for="password">Lösenord: </label>
+                <input type="password" id="password">
+                <input type="submit" id="submitBtn" value="Logga in">
+            </form>
+        </div>
     </main>
 
     <script type="module" src="/src/js/main.js"></script>

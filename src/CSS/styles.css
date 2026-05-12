@@ -22,7 +22,7 @@ body {
 h1,
 h2 {
     font-family: "Fjalla One", Impact, Arial, sans-serif, sans-serif;
-    
+
 }
 
 #logo a {
@@ -62,7 +62,7 @@ ul a {
     background-color: #F5F1E8;
 }
 
-#logout:hover{
+#logout:hover {
     text-decoration: underline;
 }
 
@@ -128,10 +128,10 @@ input {
 }
 
 /*Startsida*/
-#mainStart{
+#mainStart {
     display: grid;
     justify-items: center;
-    
+
 }
 
 #homeDiv {
@@ -144,17 +144,17 @@ input {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
     display: grid;
     justify-items: center;
-   
+
 }
 
 #homeDiv p {
     background-color: #F5F1E8;
     padding: 10px;
     border-radius: 5px;
-   align-self: start;
+    align-self: start;
 }
 
-#homeDiv h1{
+#homeDiv h1 {
     align-self: end;
     line-height: 3rem;
 }
@@ -169,7 +169,7 @@ input {
         font-size: 1.8rem;
     }
 
-     /*--Hamburgermeny--*/
+    /*--Hamburgermeny--*/
     #hamburger {
         display: block;
         order: 1;
@@ -204,5 +204,42 @@ input {
         box-shadow: none;
         color: #F5F1E8;
         font-weight: bold;
+    }
+
+    input {
+        width: 90%;
+    }
+
+
+
+    /*Loginsida*/
+    #divLogin {
+        display: grid;
+        justify-items: center;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #loginForm {
+        width: 90%;
+        display: grid;
+        justify-items: center;
+    }
+
+    /*Registreringssidan*/
+    #divRegister {
+        display: grid;
+        justify-items: center;
+        width: 90%;
+        padding: 20px;
+        text-align: center;
+    }
+
+    #registerForm {
+        width: 90%;
+        display: grid;
+        justify-items: center;
+
     }
 }
